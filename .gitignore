@@ -54,7 +54,17 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.aab
 
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.png
+
+#Firebase
+*.json
+
+*.dll
+*.bundle
+*.so
+*.srcaar
