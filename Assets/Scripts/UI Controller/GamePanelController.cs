@@ -7,6 +7,8 @@ namespace Snake.UIController
     {
         [Header("Panels")]
         [SerializeField] private GameObject menuPanel;
+        [SerializeField] private GameObject gameSelectPanel;
+        [SerializeField] private GameObject buyingPanel;
         [SerializeField] private GameObject adsPanel;
         [SerializeField] private GameObject endPanel;
         [SerializeField] private GameObject sharePanel;
@@ -74,6 +76,28 @@ namespace Snake.UIController
             gamePanel.SetActive(true);
             adsCircleBar.SetActive(false);
             resumeGame();
+        }
+
+        public void openGameSelectPanel()
+        {
+            menuPanel.SetActive(false);
+            gameSelectPanel.SetActive(true);
+        }
+
+        public void closeGameSelectPanel()
+        {
+            menuPanel.SetActive(true);
+            gameSelectPanel.SetActive(false);
+        }
+
+        public void openBuyingPanel()
+        {
+            buyingPanel.SetActive(true);
+        }
+
+        public void closeBuyingPanel()
+        {
+            buyingPanel.SetActive(false);
         }
 
         public void openAdsCircleBar()
