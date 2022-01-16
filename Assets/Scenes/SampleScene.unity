@@ -951,6 +951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 1861882648413382759, guid: e708769318f0d5a4e9ea3d3f95076507,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e708769318f0d5a4e9ea3d3f95076507, type: 3}
 --- !u!114 &1064835236 stripped

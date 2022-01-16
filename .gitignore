@@ -68,3 +68,5 @@ crashlytics-build.properties
 *.bundle
 *.so
 *.srcaar
+*.jar
+*.aar
