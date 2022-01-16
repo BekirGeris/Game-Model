@@ -18,6 +18,11 @@ namespace Snake.UIController {
         // Start is called before the first frame update
         void Start()
         {
+            setUIStrings();
+        }
+
+        public void setUIStrings()
+        {
             startBtn.text = RuntimeHelper.selectStringByLanguage("Baþla", "Start");
             sharePanelBtn.text = RuntimeHelper.selectStringByLanguage("Rekoru Paylaþ", "Share High Score");
             shareBtn.text = RuntimeHelper.selectStringByLanguage("Paylaþ", "Share");
@@ -27,6 +32,16 @@ namespace Snake.UIController {
             againBtn.text = RuntimeHelper.selectStringByLanguage("Tekrar", "Again");
             sharePanelTxt.text = RuntimeHelper.selectStringByLanguage("Rekoru Paylaþ", "Share High Score");
             shareNameHint.text = RuntimeHelper.selectStringByLanguage("Ad giriniz...", "Enter Name...");
+        }
+
+        public void setLanguageTURKISH()
+        {
+            RuntimeHelper.setLanguage(Constants.TURKISH);
+        }
+
+        public void setLanguageENGLISH()
+        {
+            RuntimeHelper.setLanguage(Constants.ENGLISH);
         }
 
     }

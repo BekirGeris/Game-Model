@@ -1,5 +1,7 @@
 using UnityEngine;
 using Snake.Data;
+using Snake.Utiles;
+using UnityEngine.UI;
 
 namespace Snake.UIController
 { 
@@ -9,6 +11,7 @@ namespace Snake.UIController
         [SerializeField] private GameObject menuPanel;
         [SerializeField] private GameObject gameSelectPanel;
         [SerializeField] private GameObject buyingPanel;
+        [SerializeField] private GameObject settingPanel;
         [SerializeField] private GameObject adsPanel;
         [SerializeField] private GameObject endPanel;
         [SerializeField] private GameObject sharePanel;
@@ -21,8 +24,13 @@ namespace Snake.UIController
         [Header("Game Data")]
         [SerializeField] private GameData gameData;
 
+        [Header("Toggle")]
+        [SerializeField] private Toggle toggleTR;
+        [SerializeField] private Toggle toggleEN;
+
         private void Start()
         {
+            setToggleLanguage();
             openMenuPanel();
         }
 
@@ -90,6 +98,18 @@ namespace Snake.UIController
             gameSelectPanel.SetActive(false);
         }
 
+        public void openSettingPanel()
+        {
+            menuPanel.SetActive(false);
+            settingPanel.SetActive(true);
+        }
+
+        public void closeSettingPanel()
+        {
+            menuPanel.SetActive(true);
+            settingPanel.SetActive(false);
+        }
+
         public void openBuyingPanel()
         {
             buyingPanel.SetActive(true);
@@ -128,6 +148,32 @@ namespace Snake.UIController
         public void resumeGame()
         {
             gameData.GameState = true;
+        }
+
+        private void setToggleLanguage()
+        {
+            if(RuntimeHelper.getLanguage() == Constants.TURKISH)
+            {
+                toggleTR.SetIsOnWithoutNotify(true);
+                toggleEN.SetIsOnWithoutNotify(false);
+            }
+            else if (RuntimeHelper.getLanguage() == Constants.ENGLISH)
+            {
+                toggleTR.SetIsOnWithoutNotify(false);
+                toggleEN.SetIsOnWithoutNotify(true);
+            }
+        }
+
+        public void onClickToggleTR()
+        {
+            RuntimeHelper.setLanguage(Constants.TURKISH);
+            setToggleLanguage();
+        }
+
+        public void onClickToggleEN()
+        {
+            RuntimeHelper.setLanguage(Constants.ENGLISH);
+            setToggleLanguage();
         }
     }
 }
