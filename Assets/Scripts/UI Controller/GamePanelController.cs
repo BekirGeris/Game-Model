@@ -175,5 +175,6 @@ namespace Snake.UIController
             RuntimeHelper.setLanguage(Constants.ENGLISH);
             setToggleLanguage();
         }
+
     }
 }

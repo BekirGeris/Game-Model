@@ -25,5 +25,26 @@ namespace Snake.Utiles
             }
             return ing;
         }
+
+        public static void setMusicStatus(bool isOpen)
+        {
+            PlayerPrefs.SetInt("Music", isOpen == true ? 1 : 0);
+        }
+
+        public static void setSoundStatus(bool isOpen)
+        {
+            PlayerPrefs.SetInt("Sound", isOpen == true ? 1 : 0);
+        }
+
+        public static bool getMusicStatus()
+        {
+            return PlayerPrefs.GetInt("Music", 1) == 1 ? true : false;
+        }
+
+        public static bool getSoundStatus()
+        {
+            return PlayerPrefs.GetInt("Sound", 1) == 1 ? true : false;
+        }
+
     }
 }
